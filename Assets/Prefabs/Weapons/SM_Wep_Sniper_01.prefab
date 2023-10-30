@@ -94,13 +94,14 @@ GameObject:
   - component: {fileID: 4570912976379269369}
   - component: {fileID: 4542207321183319971}
   - component: {fileID: 4552139297109857677}
+  - component: {fileID: 6827009752661408413}
   m_Layer: 0
   m_Name: SM_Wep_Sniper_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4570912976379269369
 Transform:
   m_ObjectHideFlags: 0
@@ -172,6 +173,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6827009752661408413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573910746086207399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfWeapon: 0
+  damage: 0
 --- !u!1 &4573960633803229007
 GameObject:
   m_ObjectHideFlags: 0

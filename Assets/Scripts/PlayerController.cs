@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
-    [SerializeField] private Camera camera;
+    [SerializeField] private CameraController cameraController;
     private CharacterController _controller;
     private Vector3 _playerVelocity;
     [SerializeField] private float speedMovement;
@@ -9,19 +9,24 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] float gravityValue = -50f;
     private bool _groundedPlayer;
 
+    private bool _isAble = true;
 
     private void Awake(){
         _controller = GetComponent<CharacterController>();
     }
 
     void Update(){
+        if (_isAble == false){
+            return;
+        }
+
         _groundedPlayer = _controller.isGrounded;
         if (_groundedPlayer && _playerVelocity.y < 0){
             _playerVelocity.y = 0f;
         }
 
         Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 direction = camera.transform.TransformDirection(inputVector);
+        Vector3 direction = cameraController.transform.TransformDirection(inputVector);
         direction.y = 0;
         _controller.Move(direction.normalized * Time.deltaTime * speedMovement);
 
@@ -33,5 +38,15 @@ public class PlayerController : MonoBehaviour{
 
         _playerVelocity.y += gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
+    }
+
+    public void Disable(){
+        _isAble = false;
+        cameraController.Disable();
+    }
+
+    public void MakeAble(){
+        _isAble = true;
+        cameraController.MakeAble();
     }
 }
