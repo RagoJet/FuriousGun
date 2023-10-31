@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 
 public class Inventory : MonoBehaviour{
-    [SerializeField] private Weapon[] weapons;
+    public Weapon[] weapons;
     private int _indexOfCurrentWeapon = 0;
 
     public void GetAndShowWeapon(int index){
+        if (!weapons[index].available){
+            return;
+        }
+
         weapons[_indexOfCurrentWeapon].gameObject.SetActive(false);
         _indexOfCurrentWeapon = index;
         weapons[_indexOfCurrentWeapon].gameObject.SetActive(true);

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-public enum TypeOfWeapon{
-}
-
 public class Weapon : MonoBehaviour{
-    [SerializeField] TypeOfWeapon typeOfWeapon;
     [SerializeField] private int damage;
+    [SerializeField] private int price;
 
-    private bool available = true;
+    public int Price => price;
+    public bool available;
+   
 }

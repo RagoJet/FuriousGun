@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4287588413007510}
   - component: {fileID: 33203189907638102}
   - component: {fileID: 23527390046270896}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Staff_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3800238933543930514}
   - component: {fileID: 3808399493103042982}
   - component: {fileID: 3818628049098651882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_Pump_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3800136635271377408}
   - component: {fileID: 3807198472578801110}
   - component: {fileID: 3818917913854635110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_Slide_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3800179593521700314}
   - component: {fileID: 3807930005352400282}
   - component: {fileID: 3818834893081432090}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_StockPad_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 3793076372297317586}
   - component: {fileID: 3808442885031534528}
   - component: {fileID: 3818674346610339846}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_Stock_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,13 +428,13 @@ GameObject:
   - component: {fileID: 3808682831122138546}
   - component: {fileID: 3818585525631976666}
   - component: {fileID: 5234275992149380733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3800074363880036756
 Transform:
   m_ObjectHideFlags: 0
@@ -517,8 +517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfWeapon: 0
   damage: 0
+  price: 0
+  available: 0
 --- !u!1 &3795157085222967948
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ GameObject:
   - component: {fileID: 3793109189935994810}
   - component: {fileID: 3807905812297295098}
   - component: {fileID: 3816943560268236870}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Shotgun_Trigger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

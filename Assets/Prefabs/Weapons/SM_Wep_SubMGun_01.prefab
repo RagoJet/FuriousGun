@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 6047043193113614203}
   - component: {fileID: 6038363443906891229}
   - component: {fileID: 1346177516077334595}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_SubMGun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6020519363328223235
 Transform:
   m_ObjectHideFlags: 0
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfWeapon: 0
   damage: 0
+  price: 0
+  available: 0
 --- !u!1 &6023772251941470041
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ GameObject:
   - component: {fileID: 6022042184505828261}
   - component: {fileID: 6046713567881043967}
   - component: {fileID: 6038382469113043945}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_SubMGun_Trigger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +196,7 @@ GameObject:
   - component: {fileID: 6020442511263343663}
   - component: {fileID: 6046915080855611991}
   - component: {fileID: 6038921655381291705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_SubMGun_Slide_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 6020583626844916373}
   - component: {fileID: 6045248104488589447}
   - component: {fileID: 6039131870462119397}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_SubMGun_Mag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

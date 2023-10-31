@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 102937692}
   - component: {fileID: 102937694}
   - component: {fileID: 102937693}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Troll_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7429101229840797321}
   - component: {fileID: 7453043228308008897}
   - component: {fileID: 7441541278434279399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Rifle_Assault_Mag_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7428838295161514735}
   - component: {fileID: 7449480542772552223}
   - component: {fileID: 7441079677327637967}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Rifle_Assault_Flash_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 7428971651647119075}
   - component: {fileID: 7449373396740341131}
   - component: {fileID: 7441083378241508927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Rifle_Assault_Trigger_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7423668289722776211}
   - component: {fileID: 7449312142761397507}
   - component: {fileID: 7441338424011885927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Rifle_Assault_Slide_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,13 +427,13 @@ GameObject:
   - component: {fileID: 7448956087338155927}
   - component: {fileID: 7441141342623746619}
   - component: {fileID: 5612699539067633861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SM_Wep_Rifle_Assault_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7424039530477003903
 Transform:
   m_ObjectHideFlags: 0
@@ -516,5 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfWeapon: 0
   damage: 0
+  price: 0
+  available: 0

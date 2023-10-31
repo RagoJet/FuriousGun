@@ -3,10 +3,7 @@ using UnityEngine;
 
 public class MainDoor : MonoBehaviour{
     [SerializeField] private Transform door;
-    
-    
     private Tween _tween;
-
 
     private void OpenTheDoor(){
         _tween.Kill();
