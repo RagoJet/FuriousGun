@@ -1,17 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour{
+    [SerializeField] private Image currentWeaponIcon;
+    [SerializeField] private Sprite[] currentWeaponIcons;
     public Weapon[] weapons;
-    private int _indexOfCurrentWeapon = 0;
+    private int _indexOfCurrentWeapon = -1;
+
+    private void Start(){
+        _indexOfCurrentWeapon = 0;
+        weapons[_indexOfCurrentWeapon].ShowSelf();
+
+        currentWeaponIcon.sprite = currentWeaponIcons[0];
+    }
 
     public void GetAndShowWeapon(int index){
-        if (!weapons[index].available){
+        if (!weapons[index].available || _indexOfCurrentWeapon == index){
             return;
         }
 
-        weapons[_indexOfCurrentWeapon].gameObject.SetActive(false);
+        weapons[_indexOfCurrentWeapon].HideSelf();
         _indexOfCurrentWeapon = index;
-        weapons[_indexOfCurrentWeapon].gameObject.SetActive(true);
+        weapons[_indexOfCurrentWeapon].ShowSelf();
+
+        currentWeaponIcon.sprite = currentWeaponIcons[index];
     }
 
     private void Update(){
