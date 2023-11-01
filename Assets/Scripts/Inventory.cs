@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour{
@@ -8,6 +7,8 @@ public class Inventory : MonoBehaviour{
     public Weapon[] weapons;
     private int _indexOfCurrentWeapon = -1;
 
+    private bool _switchAccess = true;
+
     private void Start(){
         _indexOfCurrentWeapon = 0;
         weapons[_indexOfCurrentWeapon].ShowSelf();
@@ -15,7 +16,12 @@ public class Inventory : MonoBehaviour{
         currentWeaponIcon.sprite = currentWeaponIcons[0];
     }
 
-    public void GetAndShowWeapon(int index){
+
+    private void SwitchWeapon(int index){
+        if (!_switchAccess){
+            return;
+        }
+
         if (!weapons[index].available || _indexOfCurrentWeapon == index){
             return;
         }
@@ -29,31 +35,41 @@ public class Inventory : MonoBehaviour{
 
     private void Update(){
         if (Input.GetKeyDown(KeyCode.Alpha1)){
-            GetAndShowWeapon(0);
+            SwitchWeapon(0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2)){
-            GetAndShowWeapon(1);
+            SwitchWeapon(1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3)){
-            GetAndShowWeapon(2);
+            SwitchWeapon(2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4)){
-            GetAndShowWeapon(3);
+            SwitchWeapon(3);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5)){
-            GetAndShowWeapon(4);
+            SwitchWeapon(4);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6)){
-            GetAndShowWeapon(5);
+            SwitchWeapon(5);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha7)){
-            GetAndShowWeapon(6);
+            SwitchWeapon(6);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha8)){
-            GetAndShowWeapon(7);
+            SwitchWeapon(7);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha9)){
-            GetAndShowWeapon(8);
+            SwitchWeapon(8);
         }
+    }
+
+    public void ShowWeapon(){
+        weapons[_indexOfCurrentWeapon].ShowSelf();
+        _switchAccess = true;
+    }
+
+    public void HideWeapon(){
+        weapons[_indexOfCurrentWeapon].HideSelf();
+        _switchAccess = false;
     }
 }

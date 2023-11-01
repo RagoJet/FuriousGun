@@ -1,8 +1,9 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour{
+    [SerializeField] private ParticleSystem attackFX;
+
     [SerializeField] private int damage;
     [SerializeField] private int price;
     public int Price => price;
@@ -11,6 +12,9 @@ public class Weapon : MonoBehaviour{
 
     private Vector3 _readyPosition;
     private Tween _tween;
+
+    [SerializeField] private float delayShotTime = 0.1f;
+    private float _timeFromLastShot;
 
     private void Awake(){
         _readyPosition = transform.localPosition;
@@ -31,9 +35,13 @@ public class Weapon : MonoBehaviour{
     }
 
     private void Update(){
+        _timeFromLastShot += Time.deltaTime;
         if (_isInHand){
-            if (Input.GetMouseButtonDown(0)){
-                Debug.Log("ATTTACK");
+            if (Input.GetMouseButton(0)){
+                if (_timeFromLastShot >= delayShotTime){
+                    attackFX.Play();
+                    _timeFromLastShot = 0;
+                }
             }
         }
     }

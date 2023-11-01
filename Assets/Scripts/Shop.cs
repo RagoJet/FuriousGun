@@ -53,6 +53,7 @@ public class Shop : MonoBehaviour{
 
         openPanelImage.gameObject.SetActive(true);
         _player.MakeAble();
+        inventory.ShowWeapon();
     }
 
     public void OpenShopPanel(){
@@ -66,6 +67,7 @@ public class Shop : MonoBehaviour{
         openPanelImage.gameObject.SetActive(false);
         _player.Disable();
         shopUI.UpdateGoldUI(gold);
+        inventory.HideWeapon();
     }
 
     public void BuyWeapon(int lvlWeapon){
