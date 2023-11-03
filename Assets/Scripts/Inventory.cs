@@ -16,7 +16,6 @@ public class Inventory : MonoBehaviour{
         currentWeaponIcon.sprite = currentWeaponIcons[0];
     }
 
-
     private void SwitchWeapon(int index){
         if (!_switchAccess){
             return;

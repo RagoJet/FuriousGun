@@ -1,6 +1,8 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
+    [SerializeField] private Camera weaponCamera;
     [SerializeField] private CameraController cameraController;
     private CharacterController _controller;
     private Vector3 _playerVelocity;
@@ -10,6 +12,8 @@ public class PlayerController : MonoBehaviour{
     private bool _groundedPlayer;
 
     private bool _isAble = true;
+
+    private Sequence _sequenceCamera;
 
     private void Awake(){
         _controller = GetComponent<CharacterController>();
@@ -30,6 +34,9 @@ public class PlayerController : MonoBehaviour{
         direction.y = 0;
         _controller.Move(direction.normalized * Time.deltaTime * speedMovement);
 
+        if (!_sequenceCamera.IsActive() && direction != Vector3.zero){
+            InitCameraSequence();
+        }
 
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && _groundedPlayer){
@@ -40,6 +47,7 @@ public class PlayerController : MonoBehaviour{
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 
+
     public void Disable(){
         _isAble = false;
         cameraController.Disable();
@@ -48,5 +56,19 @@ public class PlayerController : MonoBehaviour{
     public void MakeAble(){
         _isAble = true;
         cameraController.MakeAble();
+    }
+
+    private void InitCameraSequence(){
+        _sequenceCamera = DOTween.Sequence();
+        Vector3 defaultPos = weaponCamera.transform.localPosition;
+        Vector3 toRightVector = new Vector3(0.11f, 0.02f, -0.05f);
+        Vector3 toLeftVector = new Vector3(0.09f, 0.02f, -0.05f);
+
+        float duration = 0.15f;
+
+        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(toRightVector, duration));
+        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
+        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(toLeftVector, duration));
+        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
     }
 }

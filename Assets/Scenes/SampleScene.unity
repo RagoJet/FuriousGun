@@ -231,6 +231,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 6020519363328223235, guid: 6b7a5fffc38c176409283bbcc18eaa23,
         type: 3}
       propertyPath: m_RootOrder
@@ -446,6 +481,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36429062}
   m_CullTransparentMesh: 1
+--- !u!1 &135242531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135242533}
+  - component: {fileID: 135242532}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &135242532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135242531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd663ffeacb5bc543905afda45115b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &135242533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135242531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &145810787
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0.472, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1358,6 +1437,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5596675491351128325, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -2451,6 +2565,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: delayShotTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469450476349866849, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2, type: 3}
 --- !u!4 &894216451 stripped
@@ -2575,6 +2729,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: delayShotTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 7424039530477003903, guid: 6745051c9fe818d489695642115ceb0d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2635,6 +2829,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Rifle_Assault_03
       objectReference: {fileID: 0}
+    - target: {fileID: 7427451032814555077, guid: 6745051c9fe818d489695642115ceb0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6745051c9fe818d489695642115ceb0d, type: 3}
 --- !u!4 &950248246 stripped
@@ -2662,6 +2861,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: -0.018
+      objectReference: {fileID: 0}
     - target: {fileID: 7468624919173820312, guid: e93050ee6a1feb949b8fdc9a97d295b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2721,6 +2955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wep_MachineGun_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472494172277491442, guid: e93050ee6a1feb949b8fdc9a97d295b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
@@ -3435,7 +3674,7 @@ GameObject:
   - component: {fileID: 1173669923}
   - component: {fileID: 1173669921}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: WeaponCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3449,7 +3688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173669919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.107, y: -0.009, z: -0.048}
+  m_LocalPosition: {x: 0.1, y: 0, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3853,6 +4092,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: delayShotTime
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 13624959065655962, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4586137377603191919, guid: b2db02f91acb81c499a6fe0235afc719,
         type: 3}
       propertyPath: m_RootOrder
@@ -5013,7 +5292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735437878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.75, z: 9.04}
+  m_LocalPosition: {x: 0.39, y: 1.768, z: 8.337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5033,10 +5312,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02b9cb67d1f7114c9eea316c7ef3c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponCamera: {fileID: 1173669923}
   cameraController: {fileID: 330585548}
-  speedMovement: 9
-  jumpHeight: 2
-  gravityValue: -60
+  speedMovement: 13
+  jumpHeight: 2.5
+  gravityValue: -70
 --- !u!143 &1735437882
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5048,7 +5328,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.2
+  m_Height: 1
   m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.8
@@ -5155,6 +5435,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Sniper_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: delayShotTime
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: -0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
 --- !u!4 &1748462831 stripped
@@ -5182,6 +5502,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 5014373375090867934, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
       propertyPath: m_Name
@@ -5190,7 +5545,7 @@ PrefabInstance:
     - target: {fileID: 5014373375090867934, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5015973729761277416, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
@@ -5205,7 +5560,7 @@ PrefabInstance:
     - target: {fileID: 5015973729761277416, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.081
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5015973729761277416, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
@@ -5333,6 +5688,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: available
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: delayShotTime
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: durationOfShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: shakeCameraForce
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: shakeCameraStrength
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: shakeVectorStrength.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: shakeVectorStrength.y
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
+      propertyPath: shakeVectorStrength.z
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ec98e8c57546a746a43196444d9c97f, type: 3}
