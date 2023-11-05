@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533210836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.127, y: 0.111, z: 0.996}
-  m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 0.20000002}
+  m_LocalPosition: {x: 0.045, y: 0.089, z: 0.996}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 669778215}
@@ -5314,7 +5314,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.33
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14803,7 +14803,9 @@ MonoBehaviour:
   damage: 0
   price: 6200
   available: 0
-  delayShotTime: 0.1
+  delayShotTime: 0.45
+  shakeVectorStrength: {x: 0.01, y: -0.02, z: -0.02}
+  shotClip: {fileID: 8300000, guid: 7b96ff394189c0e48942c429838674af, type: 3}
 --- !u!1 &4573960633803229007
 GameObject:
   m_ObjectHideFlags: 0

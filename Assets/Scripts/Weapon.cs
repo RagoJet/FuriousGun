@@ -1,5 +1,4 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour{
@@ -19,11 +18,18 @@ public class Weapon : MonoBehaviour{
 
     [SerializeField] private Vector3 shakeVectorStrength = Vector3.one;
 
+    private AudioPlayer _audioPlayer;
+    [SerializeField] private AudioClip shotClip;
+
     private void Awake(){
         _readyPosition = transform.localPosition;
         _hidePosition = new Vector3(_readyPosition.x, _readyPosition.y - 1, _readyPosition.z);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f,
             transform.localPosition.z);
+    }
+
+    private void Start(){
+        _audioPlayer = AudioPlayer.Instance;
     }
 
 
@@ -47,6 +53,7 @@ public class Weapon : MonoBehaviour{
                 if (_timeFromLastShot >= delayShotTime){
                     attackFX.Play();
                     _timeFromLastShot = 0;
+                    _audioPlayer.PlayClip(shotClip);
                     _tweenWeapon = transform.DOShakePosition(delayShotTime * 0.8f, shakeVectorStrength);
                 }
             }

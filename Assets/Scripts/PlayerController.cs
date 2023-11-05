@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour{
 
     private bool _isAble = true;
 
-    private Sequence _sequenceCamera;
+    private Sequence _sequenceWeaponCamera;
 
     private void Awake(){
         _controller = GetComponent<CharacterController>();
@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour{
         direction.y = 0;
         _controller.Move(direction.normalized * Time.deltaTime * speedMovement);
 
-        if (!_sequenceCamera.IsActive() && direction != Vector3.zero){
-            InitCameraSequence();
+        if (!_sequenceWeaponCamera.IsActive() && direction != Vector3.zero){
+            InitWeaponCameraSequence();
         }
 
         // Changes the height position of the player..
@@ -58,17 +58,17 @@ public class PlayerController : MonoBehaviour{
         cameraController.MakeAble();
     }
 
-    private void InitCameraSequence(){
-        _sequenceCamera = DOTween.Sequence();
+    private void InitWeaponCameraSequence(){
+        _sequenceWeaponCamera = DOTween.Sequence();
         Vector3 defaultPos = weaponCamera.transform.localPosition;
         Vector3 toRightVector = new Vector3(0.11f, 0.02f, -0.05f);
         Vector3 toLeftVector = new Vector3(0.09f, 0.02f, -0.05f);
 
         float duration = 0.15f;
 
-        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(toRightVector, duration));
-        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
-        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(toLeftVector, duration));
-        _sequenceCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
+        _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(toRightVector, duration));
+        _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
+        _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(toLeftVector, duration));
+        _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
     }
 }

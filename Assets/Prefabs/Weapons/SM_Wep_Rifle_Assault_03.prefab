@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 647540314705591656}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -0.112, y: 0.059, z: 0.907}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3816730771929899164}
@@ -5246,7 +5246,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.04
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10020,7 +10020,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.033
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14793,8 +14793,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 4
+      minMaxState: 0
+      scalar: 2
       minScalar: 2
       maxCurve:
         serializedVersion: 2
@@ -14846,7 +14846,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -14899,7 +14899,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -19685,7 +19685,9 @@ MonoBehaviour:
   damage: 0
   price: 4700
   available: 0
-  delayShotTime: 0.15
+  delayShotTime: 0.1
+  shakeVectorStrength: {x: 0.015, y: -0.015, z: -0.02}
+  shotClip: {fileID: 8300000, guid: 6b1ccee5fc09aa24291f72c7b9f1e985, type: 3}
 --- !u!1 &8724335857132502323
 GameObject:
   m_ObjectHideFlags: 0
@@ -19935,7 +19937,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 3.8
       maxCurve:
         serializedVersion: 2
