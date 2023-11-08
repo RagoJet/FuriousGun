@@ -1,7 +1,14 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
+enum TypeOfWeapon{
+    Projectile,
+    RayCast
+}
+
 public class Weapon : MonoBehaviour{
+    [SerializeField] private float distanceShot = 100f;
+    [SerializeField] private CameraController cameraController;
     [SerializeField] private ParticleSystem attackFX;
     [SerializeField] private int damage;
     [SerializeField] private int price;
@@ -21,6 +28,9 @@ public class Weapon : MonoBehaviour{
     private AudioPlayer _audioPlayer;
     [SerializeField] private AudioClip shotClip;
 
+    [SerializeField] private TypeOfWeapon _typeOfWeapon;
+    int layerMask;
+
     private void Awake(){
         _readyPosition = transform.localPosition;
         _hidePosition = new Vector3(_readyPosition.x, _readyPosition.y - 1, _readyPosition.z);
@@ -30,6 +40,7 @@ public class Weapon : MonoBehaviour{
 
     private void Start(){
         _audioPlayer = AudioPlayer.Instance;
+        layerMask = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Environment"));
     }
 
 
@@ -51,12 +62,36 @@ public class Weapon : MonoBehaviour{
         if (_isInHand){
             if (Input.GetMouseButton(0)){
                 if (_timeFromLastShot >= delayShotTime){
-                    attackFX.Play();
-                    _timeFromLastShot = 0;
-                    _audioPlayer.PlayClip(shotClip);
-                    _tweenWeapon = transform.DOShakePosition(delayShotTime * 0.8f, shakeVectorStrength);
+                    AttackShot();
                 }
             }
+        }
+    }
+
+    private void AttackShot(){
+        attackFX.Play();
+        _timeFromLastShot = 0;
+        _audioPlayer.PlayClip(shotClip);
+        _tweenWeapon = transform.DOShakePosition(delayShotTime * 0.8f, shakeVectorStrength);
+
+        switch (_typeOfWeapon){
+            case TypeOfWeapon.Projectile:
+                break;
+            case TypeOfWeapon.RayCast:
+                Ray ray = new Ray(cameraController.transform.position, cameraController.transform.forward);
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, distanceShot)){
+                    var hitCollider = hitInfo.collider;
+
+
+                    if (hitCollider.TryGetComponent(out Enemy enemy)){
+                        Debug.Log("rofl");
+                    }
+                    else{
+                        Debug.Log("kek");
+                    }
+                }
+
+                break;
         }
     }
 }

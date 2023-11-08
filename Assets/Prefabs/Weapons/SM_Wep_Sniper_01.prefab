@@ -14799,6 +14799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceShot: 100
+  cameraController: {fileID: 0}
   attackFX: {fileID: 533210840}
   damage: 0
   price: 6200
@@ -14806,6 +14808,7 @@ MonoBehaviour:
   delayShotTime: 0.45
   shakeVectorStrength: {x: 0.01, y: -0.02, z: -0.02}
   shotClip: {fileID: 8300000, guid: 7b96ff394189c0e48942c429838674af, type: 3}
+  _typeOfWeapon: 1
 --- !u!1 &4573960633803229007
 GameObject:
   m_ObjectHideFlags: 0
