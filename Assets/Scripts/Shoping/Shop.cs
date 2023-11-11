@@ -19,6 +19,8 @@ public class Shop : MonoBehaviour{
 
     private Tween _tween;
 
+    [SerializeField] private Image aimIcon;
+
     private void Awake(){
         _aslanAnimator = aslanShoper.GetComponent<Animator>();
     }
@@ -54,6 +56,7 @@ public class Shop : MonoBehaviour{
         openPanelImage.gameObject.SetActive(true);
         _player.MakeAble();
         inventory.ShowWeapon();
+        aimIcon.gameObject.SetActive(true);
     }
 
     public void OpenShopPanel(){
@@ -68,6 +71,7 @@ public class Shop : MonoBehaviour{
         _player.Disable();
         shopUI.UpdateGoldUI(gold);
         inventory.HideWeapon();
+        aimIcon.gameObject.SetActive(false);
     }
 
     public void BuyWeapon(int lvlWeapon){

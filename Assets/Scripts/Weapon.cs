@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour{
     [SerializeField] private AudioClip shotClip;
 
     [SerializeField] private TypeOfWeapon _typeOfWeapon;
-    int layerMask;
+    int _layerMask;
 
     private void Awake(){
         _readyPosition = transform.localPosition;
@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour{
 
     private void Start(){
         _audioPlayer = AudioPlayer.Instance;
-        layerMask = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Environment"));
+        _layerMask = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Environment"));
     }
 
 
@@ -62,13 +62,13 @@ public class Weapon : MonoBehaviour{
         if (_isInHand){
             if (Input.GetMouseButton(0)){
                 if (_timeFromLastShot >= delayShotTime){
-                    AttackShot();
+                    Shot();
                 }
             }
         }
     }
 
-    private void AttackShot(){
+    private void Shot(){
         attackFX.Play();
         _timeFromLastShot = 0;
         _audioPlayer.PlayClip(shotClip);
@@ -76,22 +76,26 @@ public class Weapon : MonoBehaviour{
 
         switch (_typeOfWeapon){
             case TypeOfWeapon.Projectile:
+                ProjectileAttack();
                 break;
             case TypeOfWeapon.RayCast:
-                Ray ray = new Ray(cameraController.transform.position, cameraController.transform.forward);
-                if (Physics.Raycast(ray, out RaycastHit hitInfo, distanceShot)){
-                    var hitCollider = hitInfo.collider;
-
-
-                    if (hitCollider.TryGetComponent(out Enemy enemy)){
-                        Debug.Log("rofl");
-                    }
-                    else{
-                        Debug.Log("kek");
-                    }
-                }
-
+                RayCastAttack();
                 break;
         }
+    }
+
+    private void RayCastAttack(){
+        Ray ray = new Ray(cameraController.transform.position, cameraController.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, distanceShot, _layerMask)){
+            if (hitInfo.transform.TryGetComponent(out Enemy enemy)){
+                Debug.Log("rofl");
+            }
+            else{
+                Debug.Log("kek");
+            }
+        }
+    }
+
+    private void ProjectileAttack(){
     }
 }

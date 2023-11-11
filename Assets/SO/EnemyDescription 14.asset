@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b65470b9e24f11b299fb15c26371d9, type: 3}
+  m_Name: EnemyDescription 14
+  m_EditorClassIdentifier: 
+  level: 0
+  damage: 0
+  maxHealth: 0
+  gold: 0
+  enemyPrefab: {fileID: -7402865553744040352, guid: 1540a289edaaff3408a4e4e5a1e3eb90,
+    type: 3}

@@ -1,0 +1,27 @@
+﻿using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class EnemiesFactory : MonoBehaviour{
+    [SerializeField] private EnemyDescriptions enemyDescriptions;
+    [SerializeField] private PlayerController _playerController;
+    private readonly EnemyPool _enemyPool = new();
+
+
+    private void CreateEnemy(int level){
+        Enemy enemy = _enemyPool.GetEnemy(level);
+        if (enemy == null){
+            enemy = Instantiate(enemyDescriptions.ListOfEnemies[level].enemyPrefab,
+                transform.position + new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)),
+                Quaternion.identity);
+        }
+
+        enemy.Init(enemyDescriptions.ListOfEnemies[level], _playerController);
+    }
+
+    private void Start(){
+        _enemyPool.Init(enemyDescriptions.ListOfEnemies.Count);
+        for (int i = 0; i < 17; i++){
+            CreateEnemy(i);
+        }
+    }
+}
