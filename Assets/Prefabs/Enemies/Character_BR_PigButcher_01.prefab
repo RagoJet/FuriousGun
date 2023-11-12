@@ -1693,9 +1693,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3765601294511963802}
+  - component: {fileID: 8333794210308464964}
   m_Layer: 6
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1717,6 +1718,19 @@ Transform:
   m_Father: {fileID: 3765982034715408164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8333794210308464964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769171702341504764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.3, z: 0.35}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &3769171743054160306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,9 +1867,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3773181215997674322}
+  - component: {fileID: 1085846831144757263}
   m_Layer: 6
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1876,3 +1891,16 @@ Transform:
   m_Father: {fileID: 3773285123701485322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1085846831144757263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769213233538320982}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 0.32, z: 0.65}
+  m_Center: {x: 0.2, y: 0, z: 0}

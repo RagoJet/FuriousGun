@@ -87,11 +87,14 @@ public class Weapon : MonoBehaviour{
     private void RayCastAttack(){
         Ray ray = new Ray(cameraController.transform.position, cameraController.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, distanceShot, _layerMask)){
-            if (hitInfo.transform.TryGetComponent(out Enemy enemy)){
-                Debug.Log("rofl");
+            if (hitInfo.transform.CompareTag("Body")){
+                var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
+                enemy.TakeDamage(damage, 1);
             }
-            else{
-                Debug.Log("kek");
+
+            if (hitInfo.transform.CompareTag("Head")){
+                var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
+                enemy.TakeDamage(damage, 3);
             }
         }
     }

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +10,8 @@ enum EnemyState{
 }
 
 public class Enemy : MonoBehaviour{
+    public event Action<Enemy> Ondie;
+    private int _currentHP;
     private EnemyState _state;
     private EnemyDescription _enemyDescription;
     private NavMeshAgent _agent;
@@ -38,6 +42,8 @@ public class Enemy : MonoBehaviour{
         _target = playerController;
         _state = EnemyState.Moving;
         _animator.SetTrigger(_moveHashAnim);
+        _agent.isStopped = false;
+        _currentHP = _enemyDescription.maxHealth;
     }
 
     private void Update(){
@@ -89,5 +95,28 @@ public class Enemy : MonoBehaviour{
 
     public int GetLevel(){
         return _enemyDescription.level;
+    }
+
+    public void TakeDamage(int damage, int multiple){
+        if (_state == EnemyState.Death) return;
+
+        _currentHP -= damage * multiple;
+        if (_currentHP <= 0){
+            _state = EnemyState.Death;
+            _agent.isStopped = true;
+            if (multiple == 1){
+                _animator.SetTrigger(_simpleDeathAnim);
+            }
+            else{
+                _animator.SetTrigger(_headDeathAnim);
+            }
+
+            StartCoroutine(DeathLifeCycle());
+        }
+    }
+
+    IEnumerator DeathLifeCycle(){
+        yield return new WaitForSeconds(1.7f);
+        Ondie.Invoke(this);
     }
 }

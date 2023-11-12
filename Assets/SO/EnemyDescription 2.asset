@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b65470b9e24f11b299fb15c26371d9, type: 3}
   m_Name: EnemyDescription 2
   m_EditorClassIdentifier: 
-  level: 0
+  level: 2
   damage: 0
-  maxHealth: 0
+  maxHealth: 10
   gold: 0
-  enemyPrefab: {fileID: -8255471920359576097, guid: 33125270c38b1a147a461e41a52363bc,
+  enemyPrefab: {fileID: -1792721255526848753, guid: 66911ed5e6c59df4db7b84a3c90318d8,
     type: 3}

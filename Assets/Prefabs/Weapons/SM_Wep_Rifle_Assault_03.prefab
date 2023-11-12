@@ -19684,7 +19684,7 @@ MonoBehaviour:
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 7691323336604454865}
-  damage: 0
+  damage: 3
   price: 4700
   available: 0
   delayShotTime: 0.1

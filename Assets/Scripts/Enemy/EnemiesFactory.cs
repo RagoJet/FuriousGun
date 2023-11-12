@@ -13,6 +13,7 @@ public class EnemiesFactory : MonoBehaviour{
             enemy = Instantiate(enemyDescriptions.ListOfEnemies[level].enemyPrefab,
                 transform.position + new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)),
                 Quaternion.identity);
+            enemy.Ondie += _enemyPool.HideEnemy;
         }
 
         enemy.Init(enemyDescriptions.ListOfEnemies[level], _playerController);
@@ -20,8 +21,13 @@ public class EnemiesFactory : MonoBehaviour{
 
     private void Start(){
         _enemyPool.Init(enemyDescriptions.ListOfEnemies.Count);
-        for (int i = 0; i < 17; i++){
-            CreateEnemy(i);
+    }
+
+    private void Update(){
+        if (Input.GetKeyDown(KeyCode.O)){
+            for (int i = 0; i < 17; i++){
+                CreateEnemy(i);
+            }
         }
     }
 }
