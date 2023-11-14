@@ -14,11 +14,11 @@ public class ShopUI : MonoBehaviour{
 
     private void UpdateWeaponsPrice(){
         for (int i = 0; i < weaponPrices.Length; i++){
-            weaponPrices[i].text = inventory.weapons[i + 1].Price.ToString();
+            weaponPrices[i].text = "$" + inventory.weapons[i].Price;
         }
     }
 
     public void UpdateGoldUI(int gold){
-        this.gold.text = gold.ToString();
+        this.gold.text = "$" + gold;
     }
 }

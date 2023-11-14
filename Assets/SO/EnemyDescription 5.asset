@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyDescription 5
   m_EditorClassIdentifier: 
   level: 5
-  damage: 0
+  damage: 10
   maxHealth: 10
   gold: 0
   enemyPrefab: {fileID: 8786880081420828766, guid: e34b874d259390a48995d06e852e0c4b,

@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour{
     private Dictionary<KeyCode, int> weaponKeys = new Dictionary<KeyCode, int>();
 
+    [SerializeField] private TextMeshProUGUI countOfBulletsText;
     [SerializeField] private Image currentWeaponIcon;
     [SerializeField] private Sprite[] currentWeaponIcons;
     public Weapon[] weapons;
@@ -29,6 +31,11 @@ public class Inventory : MonoBehaviour{
         _indexOfCurrentWeapon = 0;
         weapons[_indexOfCurrentWeapon].ShowSelf();
         currentWeaponIcon.sprite = currentWeaponIcons[0];
+        UpdateCountOfBulletsUI();
+    }
+
+    public void UpdateCountOfBulletsUI(){
+        countOfBulletsText.text = weapons[_indexOfCurrentWeapon].countOfBullets.ToString();
     }
 
     private void SwitchWeapon(int index){
@@ -46,9 +53,10 @@ public class Inventory : MonoBehaviour{
         weapons[_indexOfCurrentWeapon].ShowSelf();
 
         currentWeaponIcon.sprite = currentWeaponIcons[index];
+        countOfBulletsText.text = weapons[_indexOfCurrentWeapon].countOfBullets.ToString();
     }
 
-    private void Update(){
+    public void Updater(){
         // switch weapons by MouseScroll
         float scrollDirection = Input.GetAxis("Mouse ScrollWheel");
 

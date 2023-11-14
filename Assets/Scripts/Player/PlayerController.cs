@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour{
     private bool _isAble = true;
 
     private Sequence _sequenceWeaponCamera;
+  
 
     private void Awake(){
         _controller = GetComponent<CharacterController>();
+      
     }
 
-    void Update(){
+    public void Updater(){
         if (_isAble == false){
             return;
         }
@@ -71,4 +73,6 @@ public class PlayerController : MonoBehaviour{
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(toLeftVector, duration));
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
     }
+
+   
 }

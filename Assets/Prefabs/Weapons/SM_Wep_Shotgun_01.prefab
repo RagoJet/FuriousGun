@@ -15131,11 +15131,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  countOfBullets: 10
+  countOfAddBullets: 30
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 1763456613}
   damage: 3
   price: 1300
+  bullet: {fileID: 0}
   available: 0
   delayShotTime: 0.7
   shakeVectorStrength: {x: 0.005, y: 0.025, z: 0.005}

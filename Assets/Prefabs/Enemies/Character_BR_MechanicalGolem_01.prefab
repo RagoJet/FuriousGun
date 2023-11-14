@@ -872,6 +872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armed: 1
+  attackClip: {fileID: 8300000, guid: 992cf9bc30bd3df4a8811c1ea35a138a, type: 3}
+  deathClip: {fileID: 8300000, guid: ac3ddfa58b37b70419bd25e422b8cd0e, type: 3}
 --- !u!195 &433983201129672224
 NavMeshAgent:
   m_ObjectHideFlags: 0

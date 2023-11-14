@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour{
@@ -13,7 +14,7 @@ public class CameraController : MonoBehaviour{
         MakeAble();
     }
 
-    private void Update(){
+    public void Updater(){
         if (_isAble == false){
             return;
         }
@@ -37,5 +38,11 @@ public class CameraController : MonoBehaviour{
     public void MakeAble(){
         _isAble = true;
         Cursor.visible = false;
+    }
+
+    public void SeeToTheSky(){
+        transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), 2f)
+            .OnComplete(() => AudioPlayer.Instance.DeathParadiseSound());
+        transform.DOLocalMoveY(-0.5f, 1.5f);
     }
 }

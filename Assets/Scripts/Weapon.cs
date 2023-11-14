@@ -7,11 +7,17 @@ enum TypeOfWeapon{
 }
 
 public class Weapon : MonoBehaviour{
+    [SerializeField] private Inventory inventory;
+    public int countOfBullets = 30;
+    public int countOfAddBullets = 30;
     [SerializeField] private float distanceShot = 100f;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private ParticleSystem attackFX;
     [SerializeField] private int damage;
     [SerializeField] private int price;
+
+    [SerializeField] private Bullet bullet;
+
     public int Price => price;
     public bool available;
     private bool _isInHand;
@@ -49,6 +55,9 @@ public class Weapon : MonoBehaviour{
         _tweenWeapon.Kill();
         gameObject.SetActive(true);
         _tweenWeapon = transform.DOLocalMove(_readyPosition, 0.3f).OnComplete(() => _isInHand = true);
+        if (bullet != null){
+            bullet.dangerousTrigger = false;
+        }
     }
 
     public void HideSelf(){
@@ -61,7 +70,7 @@ public class Weapon : MonoBehaviour{
         _timeFromLastShot += Time.deltaTime;
         if (_isInHand){
             if (Input.GetMouseButton(0)){
-                if (_timeFromLastShot >= delayShotTime){
+                if (_timeFromLastShot >= delayShotTime && countOfBullets > 0){
                     Shot();
                 }
             }
@@ -82,6 +91,9 @@ public class Weapon : MonoBehaviour{
                 RayCastAttack();
                 break;
         }
+
+        countOfBullets--;
+        inventory.UpdateCountOfBulletsUI();
     }
 
     private void RayCastAttack(){
@@ -90,15 +102,19 @@ public class Weapon : MonoBehaviour{
             if (hitInfo.transform.CompareTag("Body")){
                 var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
                 enemy.TakeDamage(damage, 1);
+                _audioPlayer.PlayBodyShot();
             }
 
             if (hitInfo.transform.CompareTag("Head")){
                 var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
                 enemy.TakeDamage(damage, 3);
+                _audioPlayer.PlayHeadShot();
             }
         }
     }
 
     private void ProjectileAttack(){
+        bullet.transform.parent = null;
+        bullet.Init(cameraController.transform.forward);
     }
 }

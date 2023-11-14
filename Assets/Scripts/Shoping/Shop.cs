@@ -75,9 +75,17 @@ public class Shop : MonoBehaviour{
     }
 
     public void BuyWeapon(int lvlWeapon){
-        if (inventory.weapons[lvlWeapon].Price <= gold && inventory.weapons[lvlWeapon].available == false){
-            inventory.weapons[lvlWeapon].available = true;
-            gold -= inventory.weapons[lvlWeapon].Price;
+        if (inventory.weapons[lvlWeapon].Price <= gold){
+            Weapon weapon = inventory.weapons[lvlWeapon];
+            if (weapon.available == false){
+                weapon.available = true;
+            }
+            else{
+                weapon.countOfBullets += weapon.countOfAddBullets;
+                inventory.UpdateCountOfBulletsUI();
+            }
+
+            gold -= weapon.Price;
             shopUI.UpdateGoldUI(gold);
         }
     }

@@ -3,7 +3,7 @@ using Random = UnityEngine.Random;
 
 public class EnemiesFactory : MonoBehaviour{
     [SerializeField] private EnemyDescriptions enemyDescriptions;
-    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private Player player;
     private readonly EnemyPool _enemyPool = new();
 
 
@@ -16,7 +16,7 @@ public class EnemiesFactory : MonoBehaviour{
             enemy.Ondie += _enemyPool.HideEnemy;
         }
 
-        enemy.Init(enemyDescriptions.ListOfEnemies[level], _playerController);
+        enemy.Init(enemyDescriptions.ListOfEnemies[level], player);
     }
 
     private void Start(){

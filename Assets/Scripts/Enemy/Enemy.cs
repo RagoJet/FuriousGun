@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour{
     private EnemyState _state;
     private EnemyDescription _enemyDescription;
     private NavMeshAgent _agent;
-    private PlayerController _target;
+    private Player _target;
 
     private float _timeFromLastCheck;
 
@@ -28,6 +28,9 @@ public class Enemy : MonoBehaviour{
 
     private float timeFromLastAttack;
 
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField] private AudioClip deathClip;
+
     private void Awake(){
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
@@ -37,7 +40,7 @@ public class Enemy : MonoBehaviour{
     }
 
 
-    public void Init(EnemyDescription enemyDescription, PlayerController playerController){
+    public void Init(EnemyDescription enemyDescription, Player playerController){
         _enemyDescription = enemyDescription;
         _target = playerController;
         _state = EnemyState.Moving;
@@ -76,13 +79,14 @@ public class Enemy : MonoBehaviour{
     }
 
     public void DealDamage(){
+        AudioPlayer.Instance.PlayClip(attackClip);
         Vector3 direction = _target.transform.position - transform.position;
         direction.y = 0;
         float distance = Vector3.SqrMagnitude(direction);
         if (distance < _agent.stoppingDistance * _agent.stoppingDistance){
             if (Time.time - timeFromLastAttack > 1.5f){
                 timeFromLastAttack = Time.time;
-                Debug.Log("attacked");
+                _target.TakeDamage(_enemyDescription.damage);
             }
         }
 
@@ -102,6 +106,7 @@ public class Enemy : MonoBehaviour{
 
         _currentHP -= damage * multiple;
         if (_currentHP <= 0){
+            AudioPlayer.Instance.PlayClip(deathClip);
             _state = EnemyState.Death;
             _agent.isStopped = true;
             if (multiple == 1){
