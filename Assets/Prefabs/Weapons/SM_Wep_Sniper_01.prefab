@@ -14808,6 +14808,8 @@ MonoBehaviour:
   damage: 3
   price: 6200
   bullet: {fileID: 0}
+  headHitFX: {fileID: 0}
+  bodyHitFX: {fileID: 0}
   available: 0
   delayShotTime: 0.45
   shakeVectorStrength: {x: 0.01, y: -0.02, z: -0.02}

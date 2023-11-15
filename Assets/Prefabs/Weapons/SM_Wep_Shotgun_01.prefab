@@ -15134,12 +15134,14 @@ MonoBehaviour:
   inventory: {fileID: 0}
   countOfBullets: 10
   countOfAddBullets: 30
-  distanceShot: 100
+  distanceShot: 15
   cameraController: {fileID: 0}
   attackFX: {fileID: 1763456613}
   damage: 3
   price: 1300
   bullet: {fileID: 0}
+  headHitFX: {fileID: 0}
+  bodyHitFX: {fileID: 0}
   available: 0
   delayShotTime: 0.7
   shakeVectorStrength: {x: 0.005, y: 0.025, z: 0.005}

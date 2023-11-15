@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour{
     private Vector3 _startLocalPos;
     private Weapon _weapon;
     [SerializeField] private float speed;
-    [SerializeField] private int damage;
+    private int _damage;
     int _layerMask;
     private bool _isActive;
     public bool dangerousTrigger;
@@ -31,11 +31,16 @@ public class Bullet : MonoBehaviour{
     }
 
     private void OnTriggerEnter(Collider other){
-        dangerousTrigger = true;
+        if (!other.CompareTag("Player")){
+            dangerousTrigger = true;
+        }
+
+
         if (!_isActive){
             return;
         }
 
+        particleSystem.transform.up = -transform.forward;
         Explosion();
     }
 
@@ -47,15 +52,15 @@ public class Bullet : MonoBehaviour{
         AudioPlayer.Instance.PlayClip(explosionClip);
         particleSystem.transform.position = transform.position;
         particleSystem.Play();
-        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(2, 2, 2),
+        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(3, 3, 3),
             Quaternion.identity, _layerMask);
         foreach (var collider in colliders){
             if (collider.TryGetComponent(out Player player)){
-                player.TakeDamage(damage);
+                player.TakeDamage(_damage);
             }
 
             if (collider.CompareTag("Body") || collider.CompareTag("Head")){
-                collider.GetComponentInParent<Enemy>().TakeDamage(damage, 1);
+                collider.GetComponentInParent<Enemy>().TakeDamage(_damage, 1);
             }
         }
 
@@ -66,5 +71,9 @@ public class Bullet : MonoBehaviour{
         transform.localPosition = _startLocalPos;
         transform.DOScale(Vector3.one, 0.2f);
         _isActive = false;
+    }
+
+    public void Construct(int damage){
+        _damage = damage;
     }
 }

@@ -19758,9 +19758,11 @@ MonoBehaviour:
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 4333332138768983317}
-  damage: 3
+  damage: 10
   price: 4000
   bullet: {fileID: 7176654528429976191}
+  headHitFX: {fileID: 0}
+  bodyHitFX: {fileID: 0}
   available: 0
   delayShotTime: 1.7
   shakeVectorStrength: {x: 0.01, y: 0.03, z: 0.01}
@@ -20301,12 +20303,12 @@ PrefabInstance:
     - target: {fileID: 8072170019103238197, guid: 0ac48916ab10db9448f41a2b7165aa5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -0.093
       objectReference: {fileID: 0}
     - target: {fileID: 8072170019103238197, guid: 0ac48916ab10db9448f41a2b7165aa5b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.382
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8072170019103238197, guid: 0ac48916ab10db9448f41a2b7165aa5b,
         type: 3}

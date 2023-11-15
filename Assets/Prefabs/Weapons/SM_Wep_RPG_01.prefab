@@ -5013,9 +5013,11 @@ MonoBehaviour:
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 8271714570544779154}
-  damage: 3
+  damage: 50
   price: 12000
   bullet: {fileID: 5423911761328759908}
+  headHitFX: {fileID: 0}
+  bodyHitFX: {fileID: 0}
   available: 0
   delayShotTime: 2
   shakeVectorStrength: {x: 0.04, y: 0.04, z: 0.04}
@@ -39765,6 +39767,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023434452978254721, guid: 5986e65ccc1917847a5c651cf03428ea,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.2059651
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023434452978254721, guid: 5986e65ccc1917847a5c651cf03428ea,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.17405078
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5986e65ccc1917847a5c651cf03428ea, type: 3}

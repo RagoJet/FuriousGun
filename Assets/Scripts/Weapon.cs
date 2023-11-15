@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour{
 
     [SerializeField] private Bullet bullet;
 
+    [SerializeField] private ParticleSystem headHitFX;
+    [SerializeField] private ParticleSystem bodyHitFX;
     public int Price => price;
     public bool available;
     private bool _isInHand;
@@ -38,6 +40,10 @@ public class Weapon : MonoBehaviour{
     int _layerMask;
 
     private void Awake(){
+        if (bullet != null){
+            bullet.Construct(damage);
+        }
+
         _readyPosition = transform.localPosition;
         _hidePosition = new Vector3(_readyPosition.x, _readyPosition.y - 1, _readyPosition.z);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 1f,
@@ -100,12 +106,18 @@ public class Weapon : MonoBehaviour{
         Ray ray = new Ray(cameraController.transform.position, cameraController.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, distanceShot, _layerMask)){
             if (hitInfo.transform.CompareTag("Body")){
+                bodyHitFX.transform.position = hitInfo.transform.position;
+                bodyHitFX.transform.up = -hitInfo.transform.forward;
+                bodyHitFX.Play();
                 var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
                 enemy.TakeDamage(damage, 1);
                 _audioPlayer.PlayBodyShot();
             }
 
             if (hitInfo.transform.CompareTag("Head")){
+                headHitFX.transform.position = hitInfo.transform.position;
+                headHitFX.transform.up = -hitInfo.transform.forward;
+                headHitFX.Play();
                 var enemy = hitInfo.transform.GetComponentInParent<Enemy>();
                 enemy.TakeDamage(damage, 3);
                 _audioPlayer.PlayHeadShot();
