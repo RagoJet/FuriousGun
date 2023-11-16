@@ -5007,13 +5007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
   countOfBullets: 32
   countOfAddBullets: 30
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 8271714570544779154}
-  damage: 50
+  damage: 40
   price: 12000
   bullet: {fileID: 5423911761328759908}
   headHitFX: {fileID: 0}

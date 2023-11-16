@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour{
+    public static Inventory Instance;
+
     private Dictionary<KeyCode, int> weaponKeys = new Dictionary<KeyCode, int>();
 
     [SerializeField] private TextMeshProUGUI countOfBulletsText;
@@ -16,6 +19,7 @@ public class Inventory : MonoBehaviour{
     private bool _switchAccess = true;
 
     private void Awake(){
+        Instance = this;
         weaponKeys[KeyCode.Alpha1] = 0;
         weaponKeys[KeyCode.Alpha2] = 1;
         weaponKeys[KeyCode.Alpha3] = 2;

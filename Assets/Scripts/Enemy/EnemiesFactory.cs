@@ -17,6 +17,7 @@ public class EnemiesFactory : MonoBehaviour{
         }
 
         enemy.Init(enemyDescriptions.ListOfEnemies[level], player);
+        AudioPlayer.Instance.PlayCreateMonsterClip();
     }
 
     private void Start(){

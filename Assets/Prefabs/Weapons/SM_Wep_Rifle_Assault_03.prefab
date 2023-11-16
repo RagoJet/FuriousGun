@@ -19681,13 +19681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
   countOfBullets: 28
   countOfAddBullets: 30
   distanceShot: 60
   cameraController: {fileID: 0}
   attackFX: {fileID: 7691323336604454865}
-  damage: 3
+  damage: 4
   price: 4700
   bullet: {fileID: 0}
   headHitFX: {fileID: 0}

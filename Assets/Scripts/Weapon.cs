@@ -7,7 +7,7 @@ enum TypeOfWeapon{
 }
 
 public class Weapon : MonoBehaviour{
-    [SerializeField] private Inventory inventory;
+    private Inventory inventory;
     public int countOfBullets = 30;
     public int countOfAddBullets = 30;
     [SerializeField] private float distanceShot = 100f;
@@ -51,6 +51,7 @@ public class Weapon : MonoBehaviour{
     }
 
     private void Start(){
+        inventory = Inventory.Instance;
         _audioPlayer = AudioPlayer.Instance;
         _layerMask = (1 << LayerMask.NameToLayer("Enemy")) | (1 << LayerMask.NameToLayer("Environment"));
     }
@@ -63,6 +64,7 @@ public class Weapon : MonoBehaviour{
         _tweenWeapon = transform.DOLocalMove(_readyPosition, 0.3f).OnComplete(() => _isInHand = true);
         if (bullet != null){
             bullet.dangerousTrigger = false;
+            bullet.Preparation();
         }
     }
 
@@ -128,5 +130,10 @@ public class Weapon : MonoBehaviour{
     private void ProjectileAttack(){
         bullet.transform.parent = null;
         bullet.Init(cameraController.transform.forward);
+    }
+
+    public string GetInfo(){
+        return
+            $"Добавить патронов: {countOfAddBullets}\nДПС: {(int) (damage / delayShotTime)}\nДальность: {distanceShot}";
     }
 }

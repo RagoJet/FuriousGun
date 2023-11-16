@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour{
         AudioPlayer.Instance.PlayClip(explosionClip);
         particleSystem.transform.position = transform.position;
         particleSystem.Play();
-        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(3, 3, 3),
+        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(3, 2, 3),
             Quaternion.identity, _layerMask);
         foreach (var collider in colliders){
             if (collider.TryGetComponent(out Player player)){
@@ -64,6 +64,14 @@ public class Bullet : MonoBehaviour{
             }
         }
 
+        Preparation();
+    }
+
+    public void Construct(int damage){
+        _damage = damage;
+    }
+
+    public void Preparation(){
         _rb.Sleep();
         transform.localScale = Vector3.zero;
         transform.parent = _weapon.transform;
@@ -71,9 +79,5 @@ public class Bullet : MonoBehaviour{
         transform.localPosition = _startLocalPos;
         transform.DOScale(Vector3.one, 0.2f);
         _isActive = false;
-    }
-
-    public void Construct(int damage){
-        _damage = damage;
     }
 }

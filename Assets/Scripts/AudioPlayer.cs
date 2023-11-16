@@ -7,7 +7,7 @@ public class AudioPlayer : MonoBehaviour{
     [SerializeField] private AudioClip bodyShot;
     [SerializeField] private AudioClip headShot;
     [SerializeField] private AudioClip startLevelSound;
-    [SerializeField] private AudioClip deathMusic;
+    [SerializeField] private AudioClip createdMonsterClip;
 
 
     private void Awake(){
@@ -31,7 +31,7 @@ public class AudioPlayer : MonoBehaviour{
         PlayClip(startLevelSound);
     }
 
-    public void DeathParadiseSound(){
-        PlayClip(deathMusic);
+    public void PlayCreateMonsterClip(){
+        PlayClip(createdMonsterClip);
     }
 }

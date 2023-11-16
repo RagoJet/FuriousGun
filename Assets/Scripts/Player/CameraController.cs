@@ -41,8 +41,7 @@ public class CameraController : MonoBehaviour{
     }
 
     public void SeeToTheSky(){
-        transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), 2f)
-            .OnComplete(() => AudioPlayer.Instance.DeathParadiseSound());
+        transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), 2f);
         transform.DOLocalMoveY(-0.5f, 1.5f);
     }
 }

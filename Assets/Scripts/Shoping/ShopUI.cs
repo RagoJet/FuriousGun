@@ -2,13 +2,14 @@
 using UnityEngine;
 
 public class ShopUI : MonoBehaviour{
-    [SerializeField] private Inventory inventory;
+    private Inventory inventory;
 
     [SerializeField] private TextMeshProUGUI gold;
     [SerializeField] private TextMeshProUGUI[] weaponPrices;
 
 
-    private void Awake(){
+    private void Start(){
+        inventory = Inventory.Instance;
         UpdateWeaponsPrice();
     }
 

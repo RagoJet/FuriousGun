@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour{
     private PlayerController _player;
-    [SerializeField] private Inventory inventory;
+    private Inventory inventory;
     public int gold = 5000;
 
     [SerializeField] private ShopUI shopUI;
@@ -21,7 +21,8 @@ public class Shop : MonoBehaviour{
 
     [SerializeField] private Image aimIcon;
 
-    private void Awake(){
+    private void Start(){
+        inventory = Inventory.Instance;
         _aslanAnimator = aslanShoper.GetComponent<Animator>();
     }
 
