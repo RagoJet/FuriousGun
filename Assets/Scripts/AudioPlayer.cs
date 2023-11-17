@@ -6,8 +6,10 @@ public class AudioPlayer : MonoBehaviour{
 
     [SerializeField] private AudioClip bodyShot;
     [SerializeField] private AudioClip headShot;
-    [SerializeField] private AudioClip startLevelSound;
+    [SerializeField] private AudioClip gameOverSound;
     [SerializeField] private AudioClip createdMonsterClip;
+    [SerializeField] private AudioClip levelStartClip;
+    [SerializeField] private AudioClip doorSound;
 
 
     private void Awake(){
@@ -19,6 +21,14 @@ public class AudioPlayer : MonoBehaviour{
         _audioSource.PlayOneShot(clip);
     }
 
+    public void PlayDoorSound(){
+        PlayClip(doorSound);
+    }
+
+    public void PlayStartLevelSound(){
+        PlayClip(levelStartClip);
+    }
+
     public void PlayBodyShot(){
         PlayClip(bodyShot);
     }
@@ -27,8 +37,8 @@ public class AudioPlayer : MonoBehaviour{
         PlayClip(headShot);
     }
 
-    public void PlayStartLevel(){
-        PlayClip(startLevelSound);
+    public void PlayGameOverSound(){
+        PlayClip(gameOverSound);
     }
 
     public void PlayCreateMonsterClip(){

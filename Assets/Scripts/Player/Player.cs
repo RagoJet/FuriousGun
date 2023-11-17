@@ -26,10 +26,14 @@ public class Player : MonoBehaviour{
         _playerController = GetComponent<PlayerController>();
         _inventory = GetComponent<Inventory>();
         _cameraController = GetComponentInChildren<CameraController>();
+        Refresh();
+        volume.profile.TryGet<ColorAdjustments>(out _CA);
+    }
+
+    public void Refresh(){
         _isAlive = true;
         _currentHealth = _maxHealth;
         UpdateUIHealth();
-        volume.profile.TryGet<ColorAdjustments>(out _CA);
     }
 
     private void Update(){
@@ -50,7 +54,7 @@ public class Player : MonoBehaviour{
                 _isAlive = false;
                 GetComponentInChildren<Weapon>().HideSelf();
                 _cameraController.SeeToTheSky();
-                AudioPlayer.Instance.PlayStartLevel();
+                AudioPlayer.Instance.PlayGameOverSound();
 
                 StartCoroutine(DeadVisibleMode());
             }

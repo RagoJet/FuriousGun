@@ -64,7 +64,6 @@ public class Weapon : MonoBehaviour{
         _tweenWeapon = transform.DOLocalMove(_readyPosition, 0.3f).OnComplete(() => _isInHand = true);
         if (bullet != null){
             bullet.dangerousTrigger = false;
-            bullet.Preparation();
         }
     }
 
