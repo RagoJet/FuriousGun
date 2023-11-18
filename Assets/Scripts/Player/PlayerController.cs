@@ -14,11 +14,10 @@ public class PlayerController : MonoBehaviour{
     private bool _isAble = true;
 
     private Sequence _sequenceWeaponCamera;
-  
+
 
     private void Awake(){
         _controller = GetComponent<CharacterController>();
-      
     }
 
     public void Updater(){
@@ -66,13 +65,11 @@ public class PlayerController : MonoBehaviour{
         Vector3 toRightVector = new Vector3(0.11f, 0.02f, -0.05f);
         Vector3 toLeftVector = new Vector3(0.09f, 0.02f, -0.05f);
 
-        float duration = 0.15f;
+        float duration = 0.17f;
 
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(toRightVector, duration));
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(toLeftVector, duration));
         _sequenceWeaponCamera.Append(weaponCamera.transform.DOLocalMove(defaultPos, duration));
     }
-
-   
 }

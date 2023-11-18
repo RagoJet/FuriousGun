@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour{
         _agent = GetComponent<NavMeshAgent>();
 
         _attackHashAnim = armed ? Animator.StringToHash("WeaponAttack") : Animator.StringToHash("BoxAttack");
-        _moveHashAnim = _agent.speed < 6 ? Animator.StringToHash("Walk") : Animator.StringToHash("Run");
+        _moveHashAnim = _agent.speed <= 6 ? Animator.StringToHash("Walk") : Animator.StringToHash("Run");
     }
 
 

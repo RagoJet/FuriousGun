@@ -3,6 +3,7 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using YG;
 using Random = UnityEngine.Random;
 
 public class WaveStarter : MonoBehaviour{
@@ -14,14 +15,35 @@ public class WaveStarter : MonoBehaviour{
     [SerializeField] private Transform door;
     private Tween _tween;
 
-    private int level = 15;
+    private int level = 1;
     public bool wasInShop;
     private bool _isWaveStarted = false;
-    private float _timeOfWave = 30f;
+    private float _timeOfWave = 60f;
 
     int countOfAliveMonsters;
 
+    private void OnEnable() => YandexGame.GetDataEvent += LoadData;
+
+    private void OnDisable() => YandexGame.GetDataEvent -= LoadData;
+
+    public void LoadData(){
+        level = YandexGame.savesData.level;
+        shop.gold = YandexGame.savesData.gold;
+        Weapon[] weapons = Inventory.Instance.weapons;
+
+        WeaponData[] weaponDatas = YandexGame.savesData.WeaponDatas;
+
+        for (int i = 0; i < weapons.Length; i++){
+            weapons[0].available = weaponDatas[0].available;
+            weapons[0].countOfBullets = weaponDatas[0].amountOfAmmo;
+        }
+    }
+
     private void Awake(){
+        if (YandexGame.SDKEnabled == true){
+            LoadData();
+        }
+
         Instance = this;
     }
 
@@ -51,6 +73,7 @@ public class WaveStarter : MonoBehaviour{
             wasInShop = false;
             _isWaveStarted = true;
             CloseTheDoor();
+            SaveData();
             StartCoroutine(StartWave());
         }
     }
@@ -68,7 +91,7 @@ public class WaveStarter : MonoBehaviour{
             }
         }
 
-        _timeOfWave = 60;
+        _timeOfWave = 60 + level;
         timeOfWaveText.text = "";
         StartCoroutine(LastWaveCheck());
     }
@@ -83,6 +106,7 @@ public class WaveStarter : MonoBehaviour{
         _isWaveStarted = false;
         OpenTheDoor();
         player.Refresh();
+        SaveData();
     }
 
     public void MinusMonster(Enemy enemy){
@@ -97,6 +121,19 @@ public class WaveStarter : MonoBehaviour{
         }
         else{
             return $"{min}:{sec}";
+        }
+    }
+
+    public void SaveData(){
+        YandexGame.savesData.level = level;
+        YandexGame.savesData.gold = shop.gold;
+        Weapon[] weapons = Inventory.Instance.weapons;
+
+        YandexGame.savesData.WeaponDatas = new WeaponData[weapons.Length];
+
+        for (int i = 0; i < weapons.Length; i++){
+            YandexGame.savesData.WeaponDatas[0].available = weapons[0].available;
+            YandexGame.savesData.WeaponDatas[0].amountOfAmmo = weapons[0].countOfBullets;
         }
     }
 }

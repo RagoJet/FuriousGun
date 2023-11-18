@@ -133,6 +133,6 @@ public class Weapon : MonoBehaviour{
 
     public string GetInfo(){
         return
-            $"Добавить патронов: {countOfAddBullets}\nДПС: {(int) (damage / delayShotTime)}\nДальность: {distanceShot}";
+            $"Добавить патронов: {countOfAddBullets}\nУрон: {damage}\nВыстрелов в секунду: {(int) (1 / delayShotTime)}\nДальность: {distanceShot}";
     }
 }

@@ -6,6 +6,5 @@ public class EnemyDescription : ScriptableObject{
     public int level;
     public int damage;
     public int maxHealth;
-    public int gold;
     public Enemy enemyPrefab;
 }

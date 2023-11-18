@@ -1,11 +1,12 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class Shop : MonoBehaviour{
     private PlayerController _player;
     private Inventory inventory;
-    public int gold = 5000;
+    public int gold;
 
     [SerializeField] private ShopUI shopUI;
 
@@ -94,5 +95,11 @@ public class Shop : MonoBehaviour{
 
     public void AddGold(int gold){
         this.gold += gold;
+    }
+
+    public void WatchRewardAd(){
+        YandexGame.RewVideoShow(0);
+        AddGold(2000);
+        shopUI.UpdateGoldUI(gold);
     }
 }
