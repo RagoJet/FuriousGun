@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour{
     private PlayerController _playerController;
@@ -73,6 +74,8 @@ public class Player : MonoBehaviour{
             _CA.saturation.value = _CA.saturation.value - 0.5f;
             yield return null;
         }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void SequenceOfTextCurrentHp(int strength){

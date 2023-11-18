@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.089738354, g: 0.072906345, b: 0.1455854, a: 1}
+  m_IndirectSpecularColor: {r: 0.11189289, g: 0.09821188, b: 0.16259108, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1254,7 +1254,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.7, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 2.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1311,14 +1311,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_LocalRotation: {x: 0.36934122, y: 0, z: 0, w: 0.9292939}
+  m_LocalRotation: {x: 0.34611708, y: 0, z: 0, w: 0.93819135}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 43.35, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.5, y: 0, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6715,6 +6715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_Pistol_Heavy_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5014373375090867934, guid: 68317e2c4c57a6e45be7063240f91cbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5015973729761277416, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
       propertyPath: m_RootOrder
@@ -8961,7 +8966,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9171,7 +9176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9213,7 +9218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9717,7 +9722,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9759,7 +9764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10340,6 +10345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wep_Grenade_Launcher_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510989919417566436, guid: b2db02f91acb81c499a6fe0235afc719,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7176654528429976191, guid: b2db02f91acb81c499a6fe0235afc719,
         type: 3}
@@ -20544,6 +20554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Wep_RPG_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431226820487929283, guid: 41a8e6ce5f90412418701662d29a2143,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6437379404364341453, guid: 41a8e6ce5f90412418701662d29a2143,
         type: 3}
@@ -93905,7 +93920,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 899b963fc9982334da61b5d9484e82bf, type: 2}
+  - {fileID: 2100000, guid: cafa0744d583e164fbb6852b3fc1df37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

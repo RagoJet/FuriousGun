@@ -25,8 +25,6 @@ public class EnemiesFactory : MonoBehaviour{
     private void Start(){
         countOfList = (byte) enemyDescriptions.ListOfEnemies.Count;
         _enemyPool.Init(enemyDescriptions.ListOfEnemies.Count);
-        CreateEnemy(4);
-        CreateEnemy(11);
     }
 
 
