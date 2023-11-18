@@ -6,6 +6,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class WaveStarter : MonoBehaviour{
+    public static WaveStarter Instance;
+    [SerializeField] private Shop shop;
     [SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI timeOfWaveText;
     [SerializeField] private EnemiesFactory enemiesFactory;
@@ -13,10 +15,15 @@ public class WaveStarter : MonoBehaviour{
     private Tween _tween;
 
     private int level = 15;
+    public bool wasInShop;
     private bool _isWaveStarted = false;
     private float _timeOfWave = 30f;
 
     int countOfAliveMonsters;
+
+    private void Awake(){
+        Instance = this;
+    }
 
     private void OpenTheDoor(){
         AudioPlayer.Instance.PlayDoorSound();
@@ -36,7 +43,12 @@ public class WaveStarter : MonoBehaviour{
             return;
         }
 
+        if (!wasInShop){
+            return;
+        }
+
         if (other.TryGetComponent(out Player player)){
+            wasInShop = false;
             _isWaveStarted = true;
             CloseTheDoor();
             StartCoroutine(StartWave());
@@ -51,7 +63,7 @@ public class WaveStarter : MonoBehaviour{
 
             if (_timeOfWave % 5 == 0){
                 var countMonsters = Random.Range(1, 4);
-                enemiesFactory.CreateMonsters(level, countMonsters, this);
+                enemiesFactory.CreateMonsters(level, countMonsters);
                 countOfAliveMonsters += countMonsters;
             }
         }
@@ -66,6 +78,7 @@ public class WaveStarter : MonoBehaviour{
             yield return new WaitForSeconds(3f);
         }
 
+        shop.AddGold(level * 500);
         level++;
         _isWaveStarted = false;
         OpenTheDoor();

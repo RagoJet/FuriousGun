@@ -1,8 +1,10 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour{
     [SerializeField] private float rotationSpeed = 500f;
+    [SerializeField] private Slider slider;
 
 
     private float yRotation;
@@ -12,6 +14,7 @@ public class CameraController : MonoBehaviour{
 
     private void Awake(){
         MakeAble();
+        ChangeSliderValue();
     }
 
     public void Updater(){
@@ -43,5 +46,13 @@ public class CameraController : MonoBehaviour{
     public void SeeToTheSky(){
         transform.DORotate(new Vector3(-90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), 2f);
         transform.DOLocalMoveY(-0.5f, 1.5f);
+    }
+
+    public void ChangeSpeed(float x){
+        rotationSpeed = x * 1000 + 50;
+    }
+
+    private void ChangeSliderValue(){
+        slider.value = rotationSpeed / 1000;
     }
 }

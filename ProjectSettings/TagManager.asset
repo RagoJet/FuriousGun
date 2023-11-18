@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Body
   - Head
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX

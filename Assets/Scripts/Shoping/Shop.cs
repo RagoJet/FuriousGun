@@ -30,6 +30,7 @@ public class Shop : MonoBehaviour{
         if (other.TryGetComponent(out PlayerController playerController)){
             openPanelImage.gameObject.SetActive(true);
             _player = playerController;
+            WaveStarter.Instance.wasInShop = true;
         }
     }
 
@@ -89,5 +90,9 @@ public class Shop : MonoBehaviour{
             gold -= weapon.Price;
             shopUI.UpdateGoldUI(gold);
         }
+    }
+
+    public void AddGold(int gold){
+        this.gold += gold;
     }
 }
