@@ -44,6 +44,7 @@ public class Shop : MonoBehaviour{
 
     private void Update(){
         if (_player != null && Input.GetKeyDown(KeyCode.E)){
+            YandexGame.FullscreenShow();
             OpenShopPanel();
         }
     }

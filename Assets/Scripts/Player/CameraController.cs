@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour{
-    [SerializeField] private float rotationSpeed = 500f;
+    public static CameraController Instance;
+    public float rotationSpeed = 350f;
     [SerializeField] private Slider slider;
 
 
@@ -13,8 +14,8 @@ public class CameraController : MonoBehaviour{
     private bool _isAble = true;
 
     private void Awake(){
+        Instance = this;
         MakeAble();
-        ChangeSliderValue();
     }
 
     public void Updater(){
@@ -52,7 +53,7 @@ public class CameraController : MonoBehaviour{
         rotationSpeed = x * 1000 + 50;
     }
 
-    private void ChangeSliderValue(){
-        slider.value = rotationSpeed / 1000;
+    public void ChangeSliderValue(){
+        slider.value = (rotationSpeed - 50f) / 1000f;
     }
 }

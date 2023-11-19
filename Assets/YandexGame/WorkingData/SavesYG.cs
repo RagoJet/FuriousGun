@@ -18,6 +18,7 @@
         public int level = 1;
         public int gold = 200;
         public WeaponData[] WeaponDatas = new WeaponData[9];
+        public float rotationCameraSpeed = 350f;
 
         // ...
 

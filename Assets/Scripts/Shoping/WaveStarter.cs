@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using YG;
 using Random = UnityEngine.Random;
@@ -10,7 +8,6 @@ public class WaveStarter : MonoBehaviour{
     public static WaveStarter Instance;
     [SerializeField] private Shop shop;
     [SerializeField] private Player player;
-    [SerializeField] private TextMeshProUGUI timeOfWaveText;
     [SerializeField] private EnemiesFactory enemiesFactory;
     [SerializeField] private Transform door;
     private Tween _tween;
@@ -30,16 +27,17 @@ public class WaveStarter : MonoBehaviour{
         level = YandexGame.savesData.level;
         shop.gold = YandexGame.savesData.gold;
         Weapon[] weapons = Inventory.Instance.weapons;
-
+        CameraController.Instance.rotationSpeed = YandexGame.savesData.rotationCameraSpeed;
+        CameraController.Instance.ChangeSliderValue();
         WeaponData[] weaponDatas = YandexGame.savesData.WeaponDatas;
 
         for (int i = 0; i < weapons.Length; i++){
-            weapons[0].available = weaponDatas[0].available;
-            weapons[0].countOfBullets = weaponDatas[0].amountOfAmmo;
+            weapons[i].available = weaponDatas[i].available;
+            weapons[i].countOfBullets = weaponDatas[i].amountOfAmmo;
         }
     }
 
-    private void Awake(){
+    private void Start(){
         if (YandexGame.SDKEnabled == true){
             LoadData();
         }
@@ -82,7 +80,6 @@ public class WaveStarter : MonoBehaviour{
         while (_timeOfWave > 0){
             yield return new WaitForSeconds(1f);
             _timeOfWave -= 1f;
-            timeOfWaveText.text = GetMinSec(_timeOfWave);
 
             if (_timeOfWave % 5 == 0){
                 var countMonsters = Random.Range(1, 4);
@@ -92,7 +89,6 @@ public class WaveStarter : MonoBehaviour{
         }
 
         _timeOfWave = 60 + level;
-        timeOfWaveText.text = "";
         StartCoroutine(LastWaveCheck());
     }
 
@@ -113,18 +109,9 @@ public class WaveStarter : MonoBehaviour{
         countOfAliveMonsters--;
     }
 
-    private String GetMinSec(float sec){
-        int min = (int) sec / 60;
-        sec = sec % 60;
-        if (sec < 10){
-            return $"{min}:0{sec}";
-        }
-        else{
-            return $"{min}:{sec}";
-        }
-    }
 
     public void SaveData(){
+        YandexGame.savesData.rotationCameraSpeed = CameraController.Instance.rotationSpeed;
         YandexGame.savesData.level = level;
         YandexGame.savesData.gold = shop.gold;
         Weapon[] weapons = Inventory.Instance.weapons;
@@ -132,8 +119,10 @@ public class WaveStarter : MonoBehaviour{
         YandexGame.savesData.WeaponDatas = new WeaponData[weapons.Length];
 
         for (int i = 0; i < weapons.Length; i++){
-            YandexGame.savesData.WeaponDatas[0].available = weapons[0].available;
-            YandexGame.savesData.WeaponDatas[0].amountOfAmmo = weapons[0].countOfBullets;
+            YandexGame.savesData.WeaponDatas[i].available = weapons[i].available;
+            YandexGame.savesData.WeaponDatas[i].amountOfAmmo = weapons[i].countOfBullets;
         }
+
+        YandexGame.SaveProgress();
     }
 }
