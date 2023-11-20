@@ -78,14 +78,11 @@ public class WaveStarter : MonoBehaviour{
 
     private IEnumerator StartWave(){
         while (_timeOfWave > 0){
-            yield return new WaitForSeconds(1f);
-            _timeOfWave -= 1f;
-
-            if (_timeOfWave % 5 == 0){
-                var countMonsters = Random.Range(1, 4);
-                enemiesFactory.CreateMonsters(level, countMonsters);
-                countOfAliveMonsters += countMonsters;
-            }
+            yield return new WaitForSeconds(5f);
+            _timeOfWave -= 5f;
+            var countMonsters = Random.Range(1, 4);
+            enemiesFactory.CreateMonsters(level, countMonsters);
+            countOfAliveMonsters += countMonsters;
         }
 
         _timeOfWave = 60 + level;

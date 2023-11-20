@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour{
     private Rigidbody _rb;
     private Vector3 _startLocalPos;
     private Weapon _weapon;
-    [SerializeField] private float speed;
+    [SerializeField] private int speed;
     private int _damage;
     int _layerMask;
     private bool _isActive;

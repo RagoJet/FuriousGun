@@ -14799,18 +14799,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countOfBullets: 17
-  countOfAddBullets: 30
+  countOfBullets: 30
+  countOfAddBullets: 12
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 533210840}
-  damage: 20
-  price: 6200
+  damage: 16
+  price: 5150
   bullet: {fileID: 0}
   headHitFX: {fileID: 0}
   bodyHitFX: {fileID: 0}
   available: 0
-  delayShotTime: 0.45
+  delayShotTime: 0.25
   shakeVectorStrength: {x: 0.01, y: -0.02, z: -0.02}
   shotClip: {fileID: 8300000, guid: 7b96ff394189c0e48942c429838674af, type: 3}
   _typeOfWeapon: 1

@@ -36,12 +36,14 @@ public class CameraController : MonoBehaviour{
 
     public void Disable(){
         _isAble = false;
-        Cursor.visible = true;
+        // Cursor.visible = true;
+        Screen.lockCursor = false;
     }
 
     public void MakeAble(){
         _isAble = true;
-        Cursor.visible = false;
+        // Cursor.visible = false;
+        Screen.lockCursor = true;
     }
 
     public void SeeToTheSky(){

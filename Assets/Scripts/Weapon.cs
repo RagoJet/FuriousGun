@@ -8,8 +8,8 @@ enum TypeOfWeapon{
 
 public class Weapon : MonoBehaviour{
     private Inventory inventory;
-    public int countOfBullets = 30;
-    public int countOfAddBullets = 30;
+    public int countOfBullets;
+    public int countOfAddBullets;
     [SerializeField] private float distanceShot = 100f;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private ParticleSystem attackFX;
@@ -76,6 +76,12 @@ public class Weapon : MonoBehaviour{
     private void Update(){
         _timeFromLastShot += Time.deltaTime;
         if (_isInHand){
+            if (Input.GetMouseButtonDown(0)){
+                if (countOfBullets <= 0){
+                    _audioPlayer.PlayNoAmmoSound();
+                }
+            }
+
             if (Input.GetMouseButton(0)){
                 if (_timeFromLastShot >= delayShotTime && countOfBullets > 0){
                     Shot();
@@ -133,6 +139,6 @@ public class Weapon : MonoBehaviour{
 
     public string GetInfo(){
         return
-            $"Добавить патронов: {countOfAddBullets}\nУрон: {damage}\nВыстрелов в секунду: {(int) (1 / delayShotTime)}\nДальность: {distanceShot}";
+            $"Урон: {damage}\nВыстрелов в секунду: {(int) (1 / delayShotTime)}\nДальность: {distanceShot}\nДобавить патронов: {countOfAddBullets}";
     }
 }

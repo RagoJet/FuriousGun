@@ -19681,8 +19681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6bcaf982fb4083a32042ae4be5170a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countOfBullets: 28
-  countOfAddBullets: 30
+  countOfBullets: 45
+  countOfAddBullets: 45
   distanceShot: 60
   cameraController: {fileID: 0}
   attackFX: {fileID: 7691323336604454865}

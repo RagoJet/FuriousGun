@@ -33,5 +33,6 @@ public class EnemiesFactory : MonoBehaviour{
             var levelOfEnemy = Random.Range(0, Mathf.Clamp(levelOfGame, 1, countOfList));
             CreateEnemy(levelOfEnemy);
         }
+
     }
 }

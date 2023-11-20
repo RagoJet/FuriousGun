@@ -230,8 +230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armed: 0
-  attackClip: {fileID: 8300000, guid: 992cf9bc30bd3df4a8811c1ea35a138a, type: 3}
+  attackClip: {fileID: 8300000, guid: 41f190d687852ef4485080e3c1961c89, type: 3}
   deathClip: {fileID: 8300000, guid: 9edeb005b5aac554a93adcd1a0bf791d, type: 3}
+  hitObjectPrefab: {fileID: 0}
+  hitObjTransform: {fileID: 0}
 --- !u!195 &8621366896548605261
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -242,7 +244,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -253,7 +255,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
 --- !u!1 &487230035179419169
 GameObject:
   m_ObjectHideFlags: 0

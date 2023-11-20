@@ -31,11 +31,15 @@ public class Enemy : MonoBehaviour{
     [SerializeField] private AudioClip attackClip;
     [SerializeField] private AudioClip deathClip;
 
+    [SerializeField] private HitObject hitObjectPrefab;
+    [SerializeField] private Transform hitObjTransform;
+
     private void Awake(){
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
 
         _attackHashAnim = armed ? Animator.StringToHash("WeaponAttack") : Animator.StringToHash("BoxAttack");
+        _attackHashAnim = _agent.stoppingDistance <= 5 ? _attackHashAnim : Animator.StringToHash("RangeAttack");
         _moveHashAnim = _agent.speed <= 6 ? Animator.StringToHash("Walk") : Animator.StringToHash("Run");
     }
 
@@ -78,19 +82,36 @@ public class Enemy : MonoBehaviour{
         }
     }
 
-    public void DealDamage(){
+    public void Attack(){
         AudioPlayer.Instance.PlayClip(attackClip);
         Vector3 direction = _target.transform.position - transform.position;
         direction.y = 0;
         float distance = Vector3.SqrMagnitude(direction);
         if (distance < _agent.stoppingDistance * _agent.stoppingDistance){
-            if (Time.time - timeFromLastAttack > 1.5f){
+            if (Time.time - timeFromLastAttack > 1f){
                 timeFromLastAttack = Time.time;
                 _target.TakeDamage(_enemyDescription.damage);
             }
         }
 
         else{
+            _agent.isStopped = false;
+            _state = EnemyState.Moving;
+            _animator.SetTrigger(_moveHashAnim);
+        }
+    }
+
+    public void CastARangeAttack(){
+        HitObject hitObject = Instantiate(hitObjectPrefab);
+        hitObject.transform.position = hitObjTransform.position;
+
+        Vector3 direction = _target.transform.position - transform.position;
+        direction.y = 0;
+
+        hitObject.Init(direction);
+
+        float distance = Vector3.SqrMagnitude(direction);
+        if (distance > _agent.stoppingDistance * _agent.stoppingDistance){
             _agent.isStopped = false;
             _state = EnemyState.Moving;
             _animator.SetTrigger(_moveHashAnim);

@@ -31,6 +31,14 @@
 
             WeaponDatas[0].available = true;
             WeaponDatas[0].amountOfAmmo = 200;
+            WeaponDatas[1].amountOfAmmo = 30;
+            WeaponDatas[2].amountOfAmmo = 12;
+            WeaponDatas[3].amountOfAmmo = 45;
+            WeaponDatas[4].amountOfAmmo = 8;
+            WeaponDatas[5].amountOfAmmo = 45;
+            WeaponDatas[6].amountOfAmmo = 12;
+            WeaponDatas[7].amountOfAmmo = 100;
+            WeaponDatas[8].amountOfAmmo = 5;
             openLevels[1] = true;
         }
     }

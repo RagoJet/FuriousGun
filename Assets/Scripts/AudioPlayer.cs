@@ -10,6 +10,7 @@ public class AudioPlayer : MonoBehaviour{
     [SerializeField] private AudioClip createdMonsterClip;
     [SerializeField] private AudioClip levelStartClip;
     [SerializeField] private AudioClip doorSound;
+    [SerializeField] private AudioClip noAmmoSound;
 
 
     private void Awake(){
@@ -19,6 +20,10 @@ public class AudioPlayer : MonoBehaviour{
 
     public void PlayClip(AudioClip clip){
         _audioSource.PlayOneShot(clip);
+    }
+
+    public void PlayNoAmmoSound(){
+        PlayClip(noAmmoSound);
     }
 
     public void PlayDoorSound(){
