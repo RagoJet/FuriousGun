@@ -1,5 +1,5 @@
 {
-    "idSave": 19,
+    "idSave": 25,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -15,7 +15,7 @@
     "WeaponDatas": [
         {
             "available": true,
-            "amountOfAmmo": 65
+            "amountOfAmmo": 60
         },
         {
             "available": true,
