@@ -24412,7 +24412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countOfBullets: 40
-  countOfAddBullets: 36
+  countOfAddBullets: 45
   distanceShot: 30
   cameraController: {fileID: 0}
   attackFX: {fileID: 1165068366}

@@ -44,13 +44,13 @@ public class Enemy : MonoBehaviour{
     }
 
 
-    public void Init(EnemyDescription enemyDescription, Player playerController){
+    public void Init(EnemyDescription enemyDescription, Player playerController, int levelOfGame){
         _enemyDescription = enemyDescription;
         _target = playerController;
         _state = EnemyState.Moving;
         _animator.SetTrigger(_moveHashAnim);
         _agent.isStopped = false;
-        _currentHP = _enemyDescription.maxHealth;
+        _currentHP = _enemyDescription.maxHealth + levelOfGame / 2;
     }
 
     private void Update(){
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour{
         Vector3 direction = _target.transform.position - transform.position;
         direction.y = 0;
 
-        hitObject.Init(direction);
+        hitObject.Init(direction.normalized);
 
         float distance = Vector3.SqrMagnitude(direction);
         if (distance > _agent.stoppingDistance * _agent.stoppingDistance){

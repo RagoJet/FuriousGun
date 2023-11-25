@@ -5012,7 +5012,7 @@ MonoBehaviour:
   distanceShot: 100
   cameraController: {fileID: 0}
   attackFX: {fileID: 8271714570544779154}
-  damage: 25
+  damage: 27
   price: 8100
   bullet: {fileID: 5423911761328759908}
   headHitFX: {fileID: 0}

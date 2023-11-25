@@ -527,6 +527,8 @@ MonoBehaviour:
   armed: 1
   attackClip: {fileID: 8300000, guid: 940567d3bbf93e642ae3c9437d9f7d3d, type: 3}
   deathClip: {fileID: 8300000, guid: b2604e435209d6c47a3fa404613ea5a0, type: 3}
+  hitObjectPrefab: {fileID: 0}
+  hitObjTransform: {fileID: 0}
 --- !u!195 &8465976312756546199
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1787,7 +1789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8488945922851916569}
   m_LocalRotation: {x: 0.18545276, y: -0.19263479, z: 0.8188238, w: -0.5079634}
-  m_LocalPosition: {x: 0.184, y: -0.068, z: 0.043}
+  m_LocalPosition: {x: 0.205, y: -0.03, z: 0.039}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

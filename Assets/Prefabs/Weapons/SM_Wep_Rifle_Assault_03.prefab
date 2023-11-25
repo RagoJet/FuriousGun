@@ -19682,12 +19682,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countOfBullets: 45
-  countOfAddBullets: 45
+  countOfAddBullets: 60
   distanceShot: 60
   cameraController: {fileID: 0}
   attackFX: {fileID: 7691323336604454865}
-  damage: 4
-  price: 4700
+  damage: 6
+  price: 5000
   bullet: {fileID: 0}
   headHitFX: {fileID: 0}
   bodyHitFX: {fileID: 0}

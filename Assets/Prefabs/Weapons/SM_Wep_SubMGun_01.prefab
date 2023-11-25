@@ -23994,17 +23994,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countOfBullets: 40
-  countOfAddBullets: 30
+  countOfAddBullets: 32
   distanceShot: 40
   cameraController: {fileID: 0}
   attackFX: {fileID: 1000905642}
-  damage: 3
-  price: 2400
+  damage: 5
+  price: 3200
   bullet: {fileID: 0}
   headHitFX: {fileID: 0}
   bodyHitFX: {fileID: 0}
   available: 0
-  delayShotTime: 0.08
+  delayShotTime: 0.12
   shakeVectorStrength: {x: 0.005, y: 0.01, z: 0.005}
   shotClip: {fileID: 8300000, guid: a5ff798d06d78fd4998acbc15d9b2e7c, type: 3}
   _typeOfWeapon: 1

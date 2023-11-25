@@ -52,10 +52,10 @@ public class CameraController : MonoBehaviour{
     }
 
     public void ChangeSpeed(float x){
-        rotationSpeed = x * 1000 + 50;
+        rotationSpeed = x * 600 + 25;
     }
 
     public void ChangeSliderValue(){
-        slider.value = (rotationSpeed - 50f) / 1000f;
+        slider.value = (rotationSpeed - 25) / 600f;
     }
 }

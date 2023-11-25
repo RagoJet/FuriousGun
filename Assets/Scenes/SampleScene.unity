@@ -233,16 +233,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
         type: 3}
-      propertyPath: price
-      value: 2280
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
-        type: 3}
-      propertyPath: damage
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -253,19 +243,9 @@ PrefabInstance:
       objectReference: {fileID: 4648679400183824883}
     - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
         type: 3}
-      propertyPath: delayShotTime
-      value: 0.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
-        type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 1346177516077334595, guid: 6b7a5fffc38c176409283bbcc18eaa23,
-        type: 3}
-      propertyPath: countOfAddBullets
-      value: 32
-      objectReference: {fileID: 0}
     - target: {fileID: 6020519363328223235, guid: 6b7a5fffc38c176409283bbcc18eaa23,
         type: 3}
       propertyPath: m_RootOrder
@@ -1705,11 +1685,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
         type: 3}
-      propertyPath: price
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -1720,19 +1695,9 @@ PrefabInstance:
       objectReference: {fileID: 4648679400183824883}
     - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
         type: 3}
-      propertyPath: delayShotTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
-        type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 490692874457140064, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
-        type: 3}
-      propertyPath: countOfAddBullets
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5596675491351128325, guid: e4b5e619f4a1e5844b32eec0d702d1b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -2727,6 +2692,9 @@ MonoBehaviour:
   player: {fileID: 1735437884}
   enemiesFactory: {fileID: 657881094}
   door: {fileID: 4247713485879999}
+  _lights:
+  - {fileID: 1894346580}
+  - {fileID: 1315821382}
   wasInShop: 0
 --- !u!65 &755113120
 BoxCollider:
@@ -3200,11 +3168,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
         type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -3213,11 +3176,6 @@ PrefabInstance:
       propertyPath: headHitFX
       value: 
       objectReference: {fileID: 4648679400183824883}
-    - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
-        type: 3}
-      propertyPath: delayShotTime
-      value: 0.13
-      objectReference: {fileID: 0}
     - target: {fileID: 5612699539067633861, guid: 6745051c9fe818d489695642115ceb0d,
         type: 3}
       propertyPath: cameraController
@@ -3312,11 +3270,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
         type: 3}
-      propertyPath: damage
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -3327,19 +3280,9 @@ PrefabInstance:
       objectReference: {fileID: 4648679400183824883}
     - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
         type: 3}
-      propertyPath: delayShotTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
-        type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 5727229523011720924, guid: e93050ee6a1feb949b8fdc9a97d295b1,
-        type: 3}
-      propertyPath: countOfAddBullets
-      value: 65
-      objectReference: {fileID: 0}
     - target: {fileID: 7468624919173820312, guid: e93050ee6a1feb949b8fdc9a97d295b1,
         type: 3}
       propertyPath: m_RootOrder
@@ -4300,8 +4243,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0.8693168, a: 1}
-  m_Intensity: 1
-  m_Range: 4
+  m_Intensity: 0.8
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5926,16 +5869,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
         type: 3}
-      propertyPath: price
-      value: 6000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
-        type: 3}
-      propertyPath: damage
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -5949,11 +5882,6 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
-        type: 3}
-      propertyPath: countOfAddBullets
-      value: 24
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
 --- !u!4 &1748462831 stripped
@@ -6463,16 +6391,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 330585546}
     m_Modifications:
-    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
-        type: 3}
-      propertyPath: price
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
-        type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 738532060601562234, guid: 68317e2c4c57a6e45be7063240f91cbb,
         type: 3}
       propertyPath: bodyHitFX
@@ -7041,16 +6959,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
-        type: 3}
-      propertyPath: price
-      value: 1800
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
-        type: 3}
-      propertyPath: damage
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
         type: 3}
@@ -10193,11 +10101,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 79662265531530361, guid: b2db02f91acb81c499a6fe0235afc719,
         type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 79662265531530361, guid: b2db02f91acb81c499a6fe0235afc719,
-        type: 3}
       propertyPath: bodyHitFX
       value: 
       objectReference: {fileID: 973276978001387345}
@@ -10211,11 +10114,6 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
-    - target: {fileID: 79662265531530361, guid: b2db02f91acb81c499a6fe0235afc719,
-        type: 3}
-      propertyPath: countOfAddBullets
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4507637166961881740, guid: b2db02f91acb81c499a6fe0235afc719,
         type: 3}
       propertyPath: m_RootOrder
@@ -20534,11 +20432,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712114069216234168, guid: 41a8e6ce5f90412418701662d29a2143,
-        type: 3}
-      propertyPath: damage
-      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7712114069216234168, guid: 41a8e6ce5f90412418701662d29a2143,
         type: 3}

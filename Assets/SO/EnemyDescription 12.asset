@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 12
   damage: 40
-  maxHealth: 39
+  maxHealth: 35
   enemyPrefab: {fileID: 9152739770170545244, guid: a84a662483308ad49ad95e780fe063d6,
     type: 3}

@@ -10,6 +10,7 @@ public class WaveStarter : MonoBehaviour{
     [SerializeField] private Player player;
     [SerializeField] private EnemiesFactory enemiesFactory;
     [SerializeField] private Transform door;
+    [SerializeField] private Light[] _lights;
     private Tween _tween;
 
     private int level = 1;
@@ -71,6 +72,11 @@ public class WaveStarter : MonoBehaviour{
         if (other.TryGetComponent(out Player player)){
             wasInShop = false;
             _isWaveStarted = true;
+            foreach (var light in _lights){
+                light.gameObject.SetActive(false);
+            }
+
+            shop.enabled = false;
             CloseTheDoor();
             SaveData();
             StartCoroutine(StartWave());
@@ -95,6 +101,11 @@ public class WaveStarter : MonoBehaviour{
             yield return fiveSeconds;
         }
 
+        foreach (var light in _lights){
+            light.gameObject.SetActive(true);
+        }
+
+        shop.enabled = true;
         shop.AddGold(level * 500);
         level++;
         _isWaveStarted = false;

@@ -139,6 +139,6 @@ public class Weapon : MonoBehaviour{
 
     public string GetInfo(){
         return
-            $"Урон: {damage}\nВыстрелов в секунду: {(int) (1 / delayShotTime)}\nДальность: {distanceShot}\nДобавить патронов: {countOfAddBullets}";
+            $"Урон: {damage}\nВыстрелов в секунду: {(1 / delayShotTime).ToString("0.##")}\nДальность: {distanceShot}\nДобавить патронов: {countOfAddBullets}";
     }
 }
