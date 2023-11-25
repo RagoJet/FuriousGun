@@ -18,6 +18,7 @@ public class WaveStarter : MonoBehaviour{
     private float _timeOfWave = 60f;
 
     int countOfAliveMonsters;
+    private WaitForSeconds fiveSeconds = new WaitForSeconds(5f);
 
     private void OnEnable() => YandexGame.GetDataEvent += LoadData;
 
@@ -78,7 +79,7 @@ public class WaveStarter : MonoBehaviour{
 
     private IEnumerator StartWave(){
         while (_timeOfWave > 0){
-            yield return new WaitForSeconds(5f);
+            yield return fiveSeconds;
             _timeOfWave -= 5f;
             var countMonsters = Random.Range(1, 4);
             enemiesFactory.CreateMonsters(level, countMonsters);
@@ -91,7 +92,7 @@ public class WaveStarter : MonoBehaviour{
 
     IEnumerator LastWaveCheck(){
         while (countOfAliveMonsters > 0){
-            yield return new WaitForSeconds(3f);
+            yield return fiveSeconds;
         }
 
         shop.AddGold(level * 500);

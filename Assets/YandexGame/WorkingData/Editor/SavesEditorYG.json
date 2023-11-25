@@ -1,5 +1,5 @@
 {
-    "idSave": 12,
+    "idSave": 19,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -11,19 +11,19 @@
         false
     ],
     "level": 7,
-    "gold": 5800,
+    "gold": 50,
     "WeaponDatas": [
         {
             "available": true,
-            "amountOfAmmo": 45
+            "amountOfAmmo": 65
         },
         {
             "available": true,
-            "amountOfAmmo": 6
+            "amountOfAmmo": 154
         },
         {
             "available": true,
-            "amountOfAmmo": 0
+            "amountOfAmmo": 24
         },
         {
             "available": false,

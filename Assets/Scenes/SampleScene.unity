@@ -1859,7 +1859,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580342496}
-  - component: {fileID: 580342497}
   m_Layer: 5
   m_Name: LayotButtons
   m_TagString: Untagged
@@ -1896,30 +1895,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &580342497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580342495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 280, y: 140}
-  m_Spacing: {x: 40, y: 70}
-  m_Constraint: 1
-  m_ConstraintCount: 4
 --- !u!1 &635274829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78039217}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5585,7 +5560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5797,8 +5772,8 @@ MonoBehaviour:
   weaponCamera: {fileID: 1173669923}
   cameraController: {fileID: 330585548}
   speedMovement: 7
-  jumpHeight: 2.4
-  gravityValue: -70
+  jumpHeight: 2
+  gravityValue: -100
 --- !u!143 &1735437882
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5951,8 +5926,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
         type: 3}
+      propertyPath: price
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
       propertyPath: damage
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
         type: 3}
@@ -5969,6 +5949,11 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 330585548}
+    - target: {fileID: 6827009752661408413, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac,
+        type: 3}
+      propertyPath: countOfAddBullets
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
 --- !u!4 &1748462831 stripped
@@ -7059,6 +7044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
         type: 3}
+      propertyPath: price
+      value: 1800
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234275992149380733, guid: 9ec98e8c57546a746a43196444d9c97f,
+        type: 3}
       propertyPath: damage
       value: 6
       objectReference: {fileID: 0}
@@ -7157,7 +7147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.9882353}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8009,7 +7999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

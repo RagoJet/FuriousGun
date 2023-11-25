@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour{
         AudioPlayer.Instance.PlayClip(explosionClip);
         particleSystem.transform.position = transform.position;
         particleSystem.Play();
-        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(3, 2, 3),
+        Collider[] colliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(2.7f, 1.9f, 2.7f),
             Quaternion.identity, _layerMask);
         foreach (var collider in colliders){
             if (collider.TryGetComponent(out Player player)){

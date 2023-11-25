@@ -10,13 +10,16 @@ public class EnemiesFactory : MonoBehaviour{
     private void CreateEnemy(int level){
         Enemy enemy = _enemyPool.GetEnemy(level);
         if (enemy == null){
-            enemy = Instantiate(enemyDescriptions.ListOfEnemies[level].enemyPrefab);
+            enemy = Instantiate(enemyDescriptions.ListOfEnemies[level].enemyPrefab,
+                transform.position + new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-19f, 4f)),
+                Quaternion.identity);
             enemy.Ondie += _enemyPool.HideEnemy;
             enemy.Ondie += WaveStarter.Instance.MinusMonster;
         }
-
-        enemy.transform.position = this.transform.position +
-                                   new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-19f, 4f));
+        else{
+            enemy.transform.position = this.transform.position +
+                                       new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-19f, 4f));
+        }
 
         enemy.Init(enemyDescriptions.ListOfEnemies[level], player);
         AudioPlayer.Instance.PlayCreateMonsterClip();
@@ -33,6 +36,5 @@ public class EnemiesFactory : MonoBehaviour{
             var levelOfEnemy = Random.Range(0, Mathf.Clamp(levelOfGame, 1, countOfList));
             CreateEnemy(levelOfEnemy);
         }
-
     }
 }
