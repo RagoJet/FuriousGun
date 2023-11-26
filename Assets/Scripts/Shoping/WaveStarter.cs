@@ -18,6 +18,8 @@ public class WaveStarter : MonoBehaviour{
     private bool _isWaveStarted = false;
     private float _timeOfWave = 60f;
 
+    public int Level => level;
+
     int countOfAliveMonsters;
     private WaitForSeconds fiveSeconds = new WaitForSeconds(5f);
 

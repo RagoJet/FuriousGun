@@ -1,5 +1,5 @@
 {
-    "idSave": 27,
+    "idSave": 31,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,24 +10,16 @@
         true,
         false
     ],
-    "level": 12,
-    "gold": 16590,
+    "level": 13,
+    "gold": 1490,
     "WeaponDatas": [
         {
             "available": true,
-            "amountOfAmmo": 105
+            "amountOfAmmo": 102
         },
         {
             "available": true,
-            "amountOfAmmo": 108
-        },
-        {
-            "available": true,
-            "amountOfAmmo": 0
-        },
-        {
-            "available": true,
-            "amountOfAmmo": 0
+            "amountOfAmmo": 23
         },
         {
             "available": true,
@@ -38,12 +30,20 @@
             "amountOfAmmo": 32
         },
         {
+            "available": true,
+            "amountOfAmmo": 5
+        },
+        {
+            "available": true,
+            "amountOfAmmo": 67
+        },
+        {
             "available": false,
             "amountOfAmmo": 12
         },
         {
             "available": true,
-            "amountOfAmmo": 630
+            "amountOfAmmo": 466
         },
         {
             "available": false,

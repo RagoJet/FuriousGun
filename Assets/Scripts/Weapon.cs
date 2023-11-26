@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using YG;
 
 enum TypeOfWeapon{
     Projectile,
@@ -138,7 +139,16 @@ public class Weapon : MonoBehaviour{
     }
 
     public string GetInfo(){
-        return
-            $"Урон: {damage}\nВыстрелов в секунду: {(1 / delayShotTime).ToString("0.##")}\nДальность: {distanceShot}\nДобавить патронов: {countOfAddBullets}";
+        string lang = YandexGame.savesData.language;
+        switch (lang){
+            case "ru":
+                return
+                    $"Урон: {damage}\nВыстрелов в секунду: {(1 / delayShotTime).ToString("0.##")}\nДальность: {distanceShot}\nДобавить патронов: {countOfAddBullets}";
+            case "en":
+                return
+                    $"Damage: {damage}\nShots in seconds: {(1 / delayShotTime).ToString("0.##")}\nShot range: {distanceShot}\nAdd ammo: {countOfAddBullets}";
+        }
+
+        return null;
     }
 }
